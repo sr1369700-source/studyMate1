@@ -165,6 +165,8 @@ app.get('/api/health', (req, res) => {
   const rt = (process.env.GMAIL_REFRESH_TOKEN || '').trim();
   res.json({
     status: 'OK',
+    nodeVersion: process.version,
+    nodePlatform: process.platform,
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV,
     envVarsSet: {
